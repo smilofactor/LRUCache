@@ -19,3 +19,16 @@ A C++ implementation of a Least Recently Used (LRU) cache designed for low-laten
 ```bash
 g++ -O3 -std=c++17 lru_cache.cpp -o lru_cache
 ./lru_cache
+
+## Automated Testing & Data Generation
+To stress-test the cache or simulate high-load environments, use the included Python generator to feed the C++ engine.
+
+1. **Generate Test Data**: 
+   The `generate_lru_input.py` script creates a stream of randomized `put` and `get` operations.
+   
+2. **Pipe to Engine**:
+   You can pipe the generator output directly into the compiled C++ binary for a real-time stream processing test:
+   ```bash
+   python3 generate_lru_input.py --count 1000 | ./lru_cache
+
+
